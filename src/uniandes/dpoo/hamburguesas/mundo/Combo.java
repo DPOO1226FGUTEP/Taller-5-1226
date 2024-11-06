@@ -1,4 +1,4 @@
-package uniandes.dpoo.hamburguesas.mundo;
+	package uniandes.dpoo.hamburguesas.mundo;
 
 import java.util.ArrayList;
 
@@ -47,17 +47,18 @@ public class Combo implements Producto
      * El precio está basado en aplicarle el descuento del combo al valor de cada uno de los productos.
      */
     @Override
-    public int getPrecio( )
-    {
+    public int getPrecio( ){
         double precio = 0;
-        for( Producto i : itemsCombo )
-        {
+        for( Producto i : itemsCombo){
             precio += i.getPrecio( );
         }
-
-        return ( int ) ( precio * descuento );
+        double total = precio * (1-descuento);
+        return ( int ) (total);
     }
 
+    public ArrayList<ProductoMenu> getProductosMenu(){
+    	return this.itemsCombo;
+    }
     /**
      * Genera el texto que debe aparecer en la factura.
      * 

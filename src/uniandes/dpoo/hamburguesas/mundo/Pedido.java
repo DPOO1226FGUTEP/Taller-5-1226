@@ -63,6 +63,11 @@ public class Pedido
     {
         return idPedido;
     }
+    
+    public static void setNumeroPedidos(int numero) {
+        numeroPedidos = numero;
+    }
+
 
     /**
      * Retorna el nombre del cliente
@@ -82,6 +87,11 @@ public class Pedido
         productos.add( nuevoProducto );
     }
 
+    
+    public  ArrayList<Producto> consultarProductos()
+    {
+        return this.productos;
+    }
     /**
      * Retorna el precio total del pedido, basado en el valor de cada uno de los productos y en el IVA
      * @return La sumatoria de los precios de los productos con el valor adicional del IVA
